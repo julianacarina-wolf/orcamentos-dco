@@ -1,0 +1,34 @@
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:#f3f6f8;color:#17212b}header{background:#0b5d3b;color:white;padding:16px 4vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5;box-shadow:0 2px 10px #0003}header div{display:flex;gap:18px;align-items:center}header strong{font-size:25px}header span{opacity:.9}button{border:1px solid #cbd5df;background:white;border-radius:8px;padding:10px 15px;cursor:pointer;font-weight:600}header button{margin-left:7px}.primary{background:#f2a900;color:#17212b;border-color:#f2a900}main{max-width:1440px;margin:24px auto;padding:0 20px}.card{background:white;border-radius:14px;padding:20px;margin-bottom:18px;box-shadow:0 2px 10px #17324d12}.hero{display:flex;justify-content:space-between;align-items:end}.hero>div:first-child{display:flex;gap:15px}.status{background:#e9f5ef;color:#0b5d3b;padding:10px 14px;border-radius:20px;font-weight:700}h2{margin:0 0 16px;font-size:18px;color:#0b5d3b}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.span2{grid-column:span 2}label{font-size:12px;font-weight:700;color:#536273;display:flex;flex-direction:column;gap:6px}input,select,textarea{width:100%;border:1px solid #cbd5df;border-radius:8px;padding:10px;background:white;font:inherit}input:focus,select:focus,textarea:focus{outline:2px solid #8bc7aa;border-color:#0b5d3b}.section-title{display:flex;justify-content:space-between;align-items:center}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:1100px}th{background:#e9f5ef;color:#0b5d3b;text-align:left;padding:10px;font-size:12px}td{padding:7px;border-bottom:1px solid #e7edf2}td input,td select{padding:8px}.money{white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums}.remove{color:#a32121;border:none;background:#fff0f0;padding:7px 10px}.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}.summary article{background:white;border-radius:14px;padding:20px;box-shadow:0 2px 10px #17324d12}.summary span{display:block;color:#687789;font-size:13px}.summary strong{display:block;margin-top:8px;font-size:23px;color:#0b5d3b}.summary .grand{background:#0b5d3b}.summary .grand span,.summary .grand strong{color:white}footer{text-align:center;padding:28px;color:#647383}@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.summary{grid-template-columns:1fr 1fr}header span{display:none}}@media print{body{background:white}header nav,.section-title button,.remove{display:none!important}header{position:static;box-shadow:none}main{margin:0;max-width:none}.card,.summary article{box-shadow:none;border:1px solid #bbb;break-inside:avoid}input,select,textarea{border:none;padding:2px;appearance:none}.table-wrap{overflow:visible}table{min-width:0;font-size:10px}footer{display:none}}.pricing-grid{display:grid;grid-template-columns:260px 220px 1fr;gap:14px;align-items:end}.method-note{margin:0;padding:10px 14px;border-left:4px solid #f2a900;background:#fff8e6;border-radius:6px;font-size:13px;color:#536273}.priceSource{display:block;min-width:120px;color:#536273;line-height:1.25}.coverage{display:block;margin-top:4px;font-size:11px}@media(max-width:900px){.pricing-grid{grid-template-columns:1fr}.method-note{grid-column:1}}
+
+/* Validação de infraestrutura de Link de Dados */
+#items tr.invalid-infrastructure {
+  background: #fff1f1;
+  outline: 2px solid #b42318;
+  outline-offset: -2px;
+}
+#items tr.invalid-infrastructure input:disabled {
+  background: #f3f4f6;
+  color: #667085;
+}
+.blocked-message {
+  color: #b42318;
+  font-weight: 700;
+  display: block;
+}
+
+.section-help{margin:-10px 0 0;color:#687789;font-size:13px;font-weight:400}.internal-note{margin:12px 0 0;padding:10px 12px;background:#fff8e6;border-left:4px solid #f2a900;border-radius:6px;color:#6b5a22;font-size:12px}.installation-table{min-width:1200px}.installation-table .valor-final{font-weight:700;color:#0b5d3b}
+@media print{.internal-only{display:none!important}.installation-card .section-help,.installation-card .internal-note{display:none!important}.installation-table{min-width:0}.installation-table th:last-child,.installation-table td:last-child{display:none!important}}
+
+.installation-status{display:block;margin-top:4px;font-size:11px;color:#47606f}.invalid-infrastructure .installation-status{color:#b42318;font-weight:700}
+
+/* Tabelas separadas por categoria */
+.service-card .section-title{align-items:flex-start;gap:18px}.service-card table{min-width:1050px}.ti-table{min-width:1250px}.ti-table input[readonly]{background:#f6f8fa;color:#536273}.summary{grid-template-columns:repeat(5,1fr)}
+#linkItems tr.invalid-infrastructure,#internetItems tr.invalid-infrastructure,#installations tr.invalid-infrastructure{background:#fff1f1;outline:2px solid #b42318;outline-offset:-2px}
+#linkItems tr.invalid-infrastructure input:disabled,#internetItems tr.invalid-infrastructure input:disabled{background:#f3f4f6;color:#667085}
+@media(max-width:1100px){.summary{grid-template-columns:repeat(2,1fr)}}
+@media print{.service-card .section-help{display:none!important}.service-card{break-inside:auto}.summary{grid-template-columns:repeat(5,1fr)}.summary article{padding:10px}.summary strong{font-size:16px}}
+
+/* Seleção das tabelas que compõem o orçamento */
+.table-selector-card{border-left:5px solid #0b5d3b}.table-selector-grid{display:grid;grid-template-columns:repeat(5,minmax(170px,1fr));gap:10px;margin-top:16px}.check-option,.include-inline{display:flex;flex-direction:row;align-items:center;gap:8px;color:#334155;font-size:13px;font-weight:700}.check-option{padding:11px 12px;border:1px solid #d8e1e8;border-radius:9px;background:#f8fafb}.check-option input,.include-inline input{width:auto;accent-color:#0b5d3b}.section-actions{display:flex;align-items:center;gap:12px}.excluded-table{opacity:.58;border:2px dashed #98a2b3}.excluded-table::before{content:'Tabela excluída dos totais e da impressão';display:block;margin-bottom:12px;padding:8px 10px;background:#f2f4f7;color:#475467;border-radius:7px;font-size:12px;font-weight:700}.summary{grid-template-columns:repeat(6,1fr)}
+@media(max-width:1100px){.table-selector-grid{grid-template-columns:repeat(2,1fr)}.section-actions{align-items:flex-end;flex-direction:column}.summary{grid-template-columns:repeat(2,1fr)}}
+@media print{.table-selector-card,.include-inline{display:none!important}.budget-table.excluded-table{display:none!important}.excluded-table::before{display:none!important}.summary{grid-template-columns:repeat(6,1fr)}}
