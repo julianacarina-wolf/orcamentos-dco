@@ -1,0 +1,9 @@
+{
+  "regioes": {
+    "SALVATERRA": {
+      "backbone": "FIBRA, RÁDIO",
+      "ultimaMilha": "FIBRA, RÁDIO",
+      "atendido": "SIM"
+    }
+  }
+}
