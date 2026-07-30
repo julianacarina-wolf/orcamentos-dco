@@ -137,10 +137,11 @@ def build(workbook_path: Path, output_dir: Path) -> None:
         })
 
     output_dir.mkdir(parents=True, exist_ok=True)
-    write_js(output_dir / "data.js", "window.APP_DATA", {
+    (output_dir / "dados").mkdir(parents=True, exist_ok=True)
+    write_js(output_dir / "dados" / "data.js", "window.APP_DATA", {
         "clientes": clientes, "servicos": servicos, "regioes": regioes, "config": config,
     })
-    write_js(output_dir / "pricing.js", "window.LINK_DATA_PRICING", {
+    write_js(output_dir / "dados" / "pricing.js", "window.LINK_DATA_PRICING", {
         "reajustes": reajustes, "faixasDesconto": faixas, "linkDados": link_dados,
     })
     print(f"Gerados data.js e pricing.js a partir de {workbook_path}")

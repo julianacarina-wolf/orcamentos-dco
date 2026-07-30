@@ -1,0 +1,6 @@
+@media print {
+  .table-selector-card,.include-inline,.internal-only,header nav,.section-title button,.remove{display:none!important}
+  .budget-table.excluded-table{display:none!important}
+  body{background:#fff}
+  header{position:static;box-shadow:none}
+}

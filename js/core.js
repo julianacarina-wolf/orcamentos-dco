@@ -1,0 +1,16 @@
+window.App = window.App || {};
+App.D = window.APP_DATA;
+App.P = window.LINK_DATA_PRICING;
+App.brl = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+App.$ = s => document.querySelector(s);
+App.norm = (v='') => String(v).normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^A-Z0-9]/gi,'').toUpperCase();
+App.option = (v,t) => `<option value="${String(v).replaceAll('"','&quot;')}">${t}</option>`;
+App.tableKeys=['implantacao','link','internet','ti','tiAnual'];
+App.municipalities=[...new Set(App.D.regioes.map(r=>r.municipio).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt-BR'));
+App.muniOptions='<option value="">Município...</option>'+App.municipalities.map(m=>App.option(m,m)).join('');
+App.allTiServices=App.D.servicos.map((s,i)=>({s,i})).filter(({s})=>{const d=App.norm(s.descricao);return d!=='LINKDEDADOS'&&d!=='INTERNET'&&!d.startsWith('IMPLANTACAODEINFRAESTRUTURA');});
+App.isAnnualService=s=>App.norm(s.faturamento).includes('PAGAMENTOUNICOANUAL');
+App.tiServices=App.allTiServices.filter(({s})=>!App.isAnnualService(s));
+App.tiAnnualServices=App.allTiServices.filter(({s})=>App.isAnnualService(s));
+App.tiOptions='<option value="">Serviço...</option>'+App.tiServices.map(({s,i})=>App.option(i,`${s.descricao}${s.tipo?' — '+s.tipo:''}`)).join('');
+App.tiAnnualOptions='<option value="">Serviço anual...</option>'+App.tiAnnualServices.map(({s,i})=>App.option(i,`${s.descricao}${s.tipo?' — '+s.tipo:''}`)).join('');

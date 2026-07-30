@@ -1,36 +1,25 @@
 # Simulador de Orçamentos PRODEPA
 
-Aplicação web estática para elaboração de orçamentos, preparada para publicação no GitHub Pages.
+Projeto estático modular preparado para GitHub Pages.
 
-## Atualizar a base de dados
+## Estrutura
 
-1. Abra `planilhas/simulador-base.xlsx`.
-2. Atualize as abas oficiais, principalmente `regiao`, `linkdados`, `servicos`, `clientes` e `pconfig`.
-3. Salve a planilha mantendo o mesmo nome.
-4. Envie a alteração para a branch `main` do GitHub.
-5. O GitHub Actions converterá a planilha em `data.js` e `pricing.js` e publicará o site.
+- `index.html`: interface principal.
+- `css/`: estilos de tela e impressão.
+- `js/`: módulos separados de infraestrutura, cálculos, tabelas, armazenamento e interface.
+- `dados/`: base gerada da planilha (`data.js` e `pricing.js`).
+- `planilhas/`: planilha oficial e correções emergenciais.
+- `scripts/`: conversor da planilha.
+- `.github/workflows/`: atualização automática e publicação.
 
-Exemplo para Salvaterra: na aba `regiao`, coluna **ULTIMA MILHA**, use `FIBRA, RÁDIO`.
+## Atualizar a base
 
-## Testar localmente
+1. Substitua `planilhas/simulador-base.xlsx`.
+2. Faça o commit no GitHub.
+3. O workflow converte a planilha, atualiza `dados/` e publica o site.
 
-```bash
-pip install -r requirements.txt
-python scripts/extract_workbook.py
-python -m http.server 8000
-```
+Para uma correção pontual de última milha, edite `planilhas/overrides.json`.
 
-Acesse `http://localhost:8000`.
+## Publicar
 
-## Publicar no GitHub Pages
-
-1. Crie um repositório no GitHub.
-2. Envie todo o conteúdo deste projeto para a branch `main`.
-3. Em **Settings → Pages**, selecione **GitHub Actions** como origem.
-4. Abra a aba **Actions** e execute `Atualizar base e publicar GitHub Pages` ou faça um novo commit.
-
-O endereço será semelhante a `https://SEU-USUARIO.github.io/NOME-DO-REPOSITORIO/`.
-
-## Armazenamento atual
-
-Nesta fase, os orçamentos continuam salvos no navegador (`localStorage`). Para uso compartilhado entre computadores, a próxima etapa será integrar uma API e banco de dados.
+Em **Settings → Pages**, selecione **GitHub Actions**. Depois faça um commit ou execute manualmente o workflow na aba **Actions**.
